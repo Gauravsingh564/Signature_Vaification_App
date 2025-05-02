@@ -4,14 +4,14 @@ import os
 import torch
 from PIL import Image
 
-# Add modular code path
-sys.path.insert(0, os.path.join(os.getcwd(), "Modular_code"))
+# ─── 1. Define your checkpoint location ────────────────────────────────
+HERE = os.path.dirname(__file__)
+CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model(1).pth")
 
 from model_builder import SignatureCNN
 from prediction import predict_signature
 
 # Paths and settings
-CHECKPOINT_PATH = "/kaggle/working/best_signature_model.pth"
 IMG_SIZE = (224, 224)
 CLASS_NAMES = ["fored_images", "real_images"]
 
