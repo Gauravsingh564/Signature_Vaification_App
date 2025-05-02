@@ -3,15 +3,8 @@ import sys
 import os
 import torch
 from PIL import Image
-# ─── 1. Define where “app.py” lives ────────────────────────────────
-HERE = os.path.dirname(__file__)
+CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model.pth")
 
-# ─── 2. (Optional) Debug listing ────────────────────────────────────
-st.write("Signature_Vaification_App:",os.getcwd())
-st.write("Contents:", os.listdir(HERE))
-# ─── 1. Define your checkpoint location ────────────────────────────────
-
-CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model(1).pth")
 
 from model_builder import SignatureCNN
 from prediction import predict_signature
