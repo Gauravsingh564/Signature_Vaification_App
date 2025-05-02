@@ -3,7 +3,12 @@ import sys
 import os
 import torch
 from PIL import Image
+# ─── 1. Define where “app.py” lives ────────────────────────────────
+HERE = os.path.dirname(__file__)
 
+# ─── 2. (Optional) Debug listing ────────────────────────────────────
+st.write("App folder:", HERE)
+st.write("Contents:", os.listdir(HERE))
 # ─── 1. Define your checkpoint location ────────────────────────────────
 
 CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model(1).pth")
