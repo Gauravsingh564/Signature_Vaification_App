@@ -14,42 +14,17 @@ CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model.pth")
 st.markdown(
     """
     <style>
-      /* Full-page gradient background */
+      /* Targets the main app container */
       .stApp {
         position: relative;
         overflow: hidden;
-        background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
-      }
-
-      /* Shooting star base style */
-      .shooting-star {
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        width: 2px;
-        height: 120px;
-        background: linear-gradient(-45deg, #fff, rgba(255,255,255,0));
-        opacity: 0;
-        transform: rotate(45deg);
-        animation: shoot 1.5s ease-out infinite;
-      }
-
-      /* Keyframes for the shooting star */
-      @keyframes shoot {
-        0%   { opacity: 0; transform: translate(-100px, 0) rotate(45deg); }
-        10%  { opacity: 1; }
-        100% { opacity: 0; transform: translate(900px, 700px) rotate(45deg); }
+        background-color: #000000;
       }
     </style>
-
-    <!-- Insert as many of these as you like for multiple stars -->
-    <div class="shooting-star" style="animation-delay: 0s;"></div>
-    <div class="shooting-star" style="animation-delay: 0.7s;"></div>
-    <div class="shooting-star" style="animation-delay: 1.4s;"></div>
-    <div class="shooting-star" style="animation-delay: 2.1s;"></div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 # ─── 3. App constants ───────────────────────────────────────────────────
