@@ -35,27 +35,7 @@ def main():
         overflow: hidden;
         background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
       }
-      /* Shooting star style */
-      .shooting-star {
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        width: 2px;
-        height: 120px;
-        background: linear-gradient(-45deg, #fff, rgba(255,255,255,0));
-        opacity: 0;
-        transform: rotate(45deg);
-        animation: shoot 1.5s ease-out infinite;
-      }
-      @keyframes shoot {
-        0%   { opacity: 0; transform: translate(-100px, 0) rotate(45deg); }
-        10%  { opacity: 1; }
-        100% { opacity: 0; transform: translate(900px, 700px) rotate(45deg); }
-      }
-    </style>
-    <!-- You can duplicate this div (or add via JS) for multiple stars -->
-    <div class="shooting-star"></div>
-    """,
+     
     unsafe_allow_html=True
 )
     st.title("✨ Signature Verification")
