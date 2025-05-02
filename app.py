@@ -26,16 +26,16 @@ def load_model(device):
 
 # ─── 5. Main app ───────────────────────────────────────────────────────
 def main():
-    st.markdown(
+   st.markdown(
     """
     <style>
-      /* Full-page gradient background */
+      /* Targets the main app container */
       .stApp {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        background-attachment: fixed;
       }
-     
+    </style>
+    """,
     unsafe_allow_html=True
 )
     st.title("✨ Signature Verification")
