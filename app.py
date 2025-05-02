@@ -10,7 +10,23 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model.pth")
 
 # ─── 2. Inject gradient + shooting-star CSS ───────────────────────────
-st.markdown(
+
+
+# ─── 3. App constants ───────────────────────────────────────────────────
+IMG_SIZE    = (224, 224)
+CLASS_NAMES = ["forged_images", "real_images"]
+
+# ─── 4. Model loader ────────────────────────────────────────────────────
+@st.cache_resource
+def load_model(device):
+    model = SignatureCNN(num_classes=len(CLASS_NAMES))
+    model.load_state_dict(torch.load(CHECKPOINT_PATH, map_location=device))
+    model.to(device).eval()
+    return model
+
+# ─── 5. Main app ───────────────────────────────────────────────────────
+def main():
+    st.markdown(
     """
     <style>
       /* Full-page gradient background */
@@ -42,21 +58,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-# ─── 3. App constants ───────────────────────────────────────────────────
-IMG_SIZE    = (224, 224)
-CLASS_NAMES = ["forged_images", "real_images"]
-
-# ─── 4. Model loader ────────────────────────────────────────────────────
-@st.cache_resource
-def load_model(device):
-    model = SignatureCNN(num_classes=len(CLASS_NAMES))
-    model.load_state_dict(torch.load(CHECKPOINT_PATH, map_location=device))
-    model.to(device).eval()
-    return model
-
-# ─── 5. Main app ───────────────────────────────────────────────────────
-def main():
     st.title("✨ Signature Verification")
     st.write("Upload a signature image below →")
 
