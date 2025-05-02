@@ -24,19 +24,45 @@ def load_model(device):
     return model
 
 def main():
-    st.markdown(
-    """
+   st.markdown(
+    '''
     <style>
-      /* Targets the main app container */
+      /* Full-page gradient background */
       .stApp {
-        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-        background-attachment: fixed;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+      }
+      /* Shooting star style */
+      .shooting-star {
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 3px;
+        height: 100px;
+        background: linear-gradient(-45deg, white, rgba(255,255,255,0));
+        opacity: 0;
+        transform: rotate(45deg);
+        animation: shoot 1s ease-out infinite;
+      }
+      @keyframes shoot {
+        0% {
+          opacity: 0;
+          transform: translate(-100px, 0) rotate(45deg);
+        }
+        10% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(800px, 600px) rotate(45deg);
+        }
       }
     </style>
-    """,
+    <div class="shooting-star"></div>
+    ''',
     unsafe_allow_html=True
 )
-
     st.title("Signature Verification")
     st.write("Upload a signature image, and this app will predict whether it is forged or real.")
 
