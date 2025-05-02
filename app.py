@@ -24,9 +24,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
-
 # ─── 3. App constants ───────────────────────────────────────────────────
 IMG_SIZE    = (224, 224)
 CLASS_NAMES = ["forged_images", "real_images"]
