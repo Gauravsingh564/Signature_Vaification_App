@@ -9,8 +9,20 @@ from prediction import predict_signature
 HERE = os.path.dirname(os.path.abspath(__file__))
 CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model.pth")
 
-# ─── 2. Inject gradient + shooting-star CSS ───────────────────────────
-
+# ─── 2. (Optional) gradient background only ────────────────────────────
+# you can replace this block with your shooting-star CSS if you like
+st.markdown(
+    """
+    <style>
+      /* Targets the main app container */
+      .stApp {
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        background-attachment: fixed;
+      }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # ─── 3. App constants ───────────────────────────────────────────────────
 IMG_SIZE    = (224, 224)
@@ -26,18 +38,6 @@ def load_model(device):
 
 # ─── 5. Main app ───────────────────────────────────────────────────────
 def main():
-   st.markdown(
-    """
-    <style>
-      /* Targets the main app container */
-      .stApp {
-        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-        background-attachment: fixed;
-      }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
     st.title("✨ Signature Verification")
     st.write("Upload a signature image below →")
 
@@ -58,8 +58,11 @@ def main():
         tmp_path = os.path.join(HERE, "tmp_signature.png")
         img.save(tmp_path)
         prediction = predict_signature(
-            model, tmp_path, device,
-            img_size=IMG_SIZE, class_names=CLASS_NAMES
+            model,
+            tmp_path,
+            device,
+            img_size=IMG_SIZE,
+            class_names=CLASS_NAMES
         )
 
     st.success(f"Prediction: **{prediction}**")
