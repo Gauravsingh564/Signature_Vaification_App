@@ -24,6 +24,19 @@ def load_model(device):
     return model
 
 def main():
+    st.markdown(
+    """
+    <style>
+      /* Targets the main app container */
+      .stApp {
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        background-attachment: fixed;
+      }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
     st.title("Signature Verification")
     st.write("Upload a signature image, and this app will predict whether it is forged or real.")
 
