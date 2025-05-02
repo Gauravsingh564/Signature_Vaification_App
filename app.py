@@ -5,7 +5,7 @@ import torch
 from PIL import Image
 
 # ─── 1. Define your checkpoint location ────────────────────────────────
-HERE = os.path.dirname(__file__)
+
 CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model(1).pth")
 
 from model_builder import SignatureCNN
