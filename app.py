@@ -7,7 +7,7 @@ from PIL import Image
 HERE = os.path.dirname(__file__)
 
 # ─── 2. (Optional) Debug listing ────────────────────────────────────
-st.write("App folder:", HERE)
+st.write("App folder:",os.getcwd())
 st.write("Contents:", os.listdir(HERE))
 # ─── 1. Define your checkpoint location ────────────────────────────────
 
