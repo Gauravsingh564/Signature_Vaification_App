@@ -3,6 +3,8 @@ import sys
 import os
 import torch
 from PIL import Image
+HERE = os.path.dirname(os.path.abspath(__file__))
+
 CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model.pth")
 
 
@@ -11,7 +13,7 @@ from prediction import predict_signature
 
 # Paths and settings
 IMG_SIZE = (224, 224)
-CLASS_NAMES = ["fored_images", "real_images"]
+CLASS_NAMES = ["forged_images", "real_images"]
 
 @st.cache_resource
 def load_model(device):
