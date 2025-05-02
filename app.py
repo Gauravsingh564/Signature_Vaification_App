@@ -1,6 +1,5 @@
 import streamlit as st
 import os
-import torch
 from PIL import Image
 from model_builder import SignatureCNN
 from prediction import predict_signature
@@ -31,6 +30,7 @@ CLASS_NAMES = ["forged_images", "real_images"]
 # ─── 4. Model loader ────────────────────────────────────────────────────
 @st.cache_resource
 def load_model(device):
+    import torch
     model = SignatureCNN(num_classes=len(CLASS_NAMES))
     model.load_state_dict(torch.load(CHECKPOINT_PATH, map_location=device))
     model.to(device).eval()
