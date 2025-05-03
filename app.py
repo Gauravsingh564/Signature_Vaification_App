@@ -16,7 +16,7 @@ st.markdown(
     <style>
       [data-testid="stAppViewContainer"] { background-color: #000000; }
       [data-testid="stSidebar"] > div:first-child { background-color: #1c1c1c; }
-      [data-testid="stToolbar"] { background-color: #000000; }
+      
       .css-1d391kg, .css-1d391kg * { color: #FFFFFF !important; }
     </style>
     """,
