@@ -8,6 +8,25 @@ import torch
 # ─── 1. Script directory & checkpoint ─────────────────────────────────
 HERE = os.path.dirname(os.path.abspath(__file__))
 CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model.pth")
+st.markdown(
+    """
+    <style>
+      /* overall page background */
+      .reportview-container, .main {
+        background-color: #000000;
+      }
+      /* sidebar background */
+      .sidebar .sidebar-content {
+        background-color: #1c1c1c;
+      }
+      /* widget labels and texts */
+      .stText, .stMarkdown, .stMetric-label { 
+        color: #FFFFFF;
+      }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # ─── 3. App constants ───────────────────────────────────────────────────
 IMG_SIZE    = (224, 224)
