@@ -8,8 +8,6 @@ from prediction import predict_signature
 # 1. Page config
 st.set_page_config(
     page_title="✨ Signature Verification",
-    layout="wide",
-    initial_sidebar_state="expanded"
 )
 
 # 2. CSS injection for matte-black theme
