@@ -9,21 +9,6 @@ import torch
 HERE = os.path.dirname(os.path.abspath(__file__))
 CHECKPOINT_PATH = os.path.join(HERE, "best_signature_model.pth")
 
-# ─── 2. (Optional) gradient background only ────────────────────────────
-# you can replace this block with your shooting-star CSS if you like
-st.markdown(
-    """
-    <style>
-      /* Targets the main app container */
-      .stApp {
-        position: relative;
-        overflow: hidden;
-        background-color: #000000;
-      }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 # ─── 3. App constants ───────────────────────────────────────────────────
 IMG_SIZE    = (224, 224)
 CLASS_NAMES = ["forged_images", "real_images"]
